@@ -1,0 +1,71 @@
+<!--
+* File name: index.html
+* Description:
+* Stream capture demo.
+* Makes a basic peer connection.
+* Author: Elisabet González.
+* Source:
+* Date: October 6th, 2016.
+* Version 1.0
+*
+* History:
+* v1.0  06/10/2016  Peer connection testing.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peer connection (Audio) Demo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>
+        Simple Peer Connection (Audio) v1.0
+      </h1>
+
+      <div id="audio">
+        <div>
+          <div class="label">Local audio:</div>
+          <audio id="audio1" autoplay controls muted></audio>
+        </div>
+        <div>
+          <div class="label">Remote audio:</div>
+          <audio id="audio2" controls autoplay></audio>
+        </div>
+      </div>
+
+      <div id="buttons">
+        <select id="codec">
+          <!-- Codec values are matched with how they appear in the SDP.
+          For instance, opus matches opus/48000/2 in Chrome, and ISAC/16000
+          matches 16K iSAC (but not 32K iSAC). -->
+          <option value="opus">Opus</option>
+          <option value="ISAC">iSAC 16K</option>
+          <option value="G722">G722</option>
+          <option value="PCMU">PCMU</option>
+        </select>
+        <button id="callButton">Call</button>
+        <button id="hangupButton">Hang Up</button>
+      </div>
+
+      <div class="graph-container" id="bitrateGraph">
+        <div>Bitrate</div>
+        <canvas id="bitrateCanvas"></canvas>
+      </div>
+      <div class="graph-container" id="packetGraph">
+        <div>Packets sent per second</div>
+        <canvas id="packetCanvas"></canvas>
+      </div>
+    </div>
+
+    <script src="js/adapter.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/graph.js>"></script>
+    <script src="js/lib/ga.js"></script>
+  </body>
+</html>
